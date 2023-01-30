@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>linq2db.AspNet</name>
+    </assembly>
+    <members>
+        <member name="T:System.Index">
+            <summary>Represent a type can be used to index a collection either from the start or the end.</summary>
+            <remarks>
+            Index is used by the C# compiler to support the new index syntax
+            <code>
+            int[] someArray = new int[5] { 1, 2, 3, 4, 5 } ;
+            int lastElement = someArray[^1]; // lastElement = 5
+            </code>
+            </remarks>
+        </member>
+        <member name="M:System.Index.#ctor(System.Int32,System.Boolean)">
+            <summary>Construct an Index using a value and indicating if the index is from the start or from the end.</summary>
+            <param name="value">The index value. it has to be zero or positive number.</param>
+            <param name="fromEnd">Indicating if the index is from the start or from the end.</param>
+            <remarks>
+            If the Index constructed from the end, index value 1 means pointing at the last element and index value 0 means pointing at beyond last element.
+            </remarks>
+        </member>
+        <member name="P:System.Index.Start">
+            <summary>Create an Index pointing at first element.</summary>
+        </member>
+        <member name="P:System.Index.End">
+            <summary>Create an Index pointing at beyond last element.</summary>
+        </member>
+        <member name="M:System.Index.FromStart(System.Int32)">
+            <summary>Create an Index from the start at the position indicated by the value.</summary>
+            <param name="value">The index value from the start.</param>
+        </member>
+        <member name="M:System.Index.FromEnd(System.Int32)">
+            <summary>Create an Index from the end at the position indicated by the value.</summary>
+            <param name="value">The index value from the end.</param>
+        </member>
+        <member name="P:System.Index.Value">
+            <summary>Returns the index value.</summary>
+        </member>
+        <member name="P:System.Index.IsFromEnd">
+            <summary>Indicates whether the index is from the start or the end.</summary>
+        </member>
+        <member name="M:System.Index.GetOffset(System.Int32)">
+            <summary>Calculate the offset from the start using the giving collection length.</summary>
+            <param name="length">The length of the collection that the Index will be used with. length has to be a positive value</param>
+            <remarks>
+            For performance reason, we don't validate the input length parameter and the returned offset value against negative values.
+            we don't validate either the returned offset is greater than the input length.
+            It is expected Index will be used with collections which always have non negative length/count. If the returned offset is negative and
+            then used to index a collection will get out of range exception which will be same affect as the validation.
+            </remarks>
+        </member>
+        <member name="M:System.Index.Equals(System.Object)">
+            <summary>Indicates whether the current Index object is equal to another object of the same type.</summary>
+            <param name="obj">An object to compare with this object</param>
+        </member>
+        <member name="M:System.Index.Equals(System.Index)">
+            <summary>Indicates whether the current Index object is equal to another Index object.</summary>
+            <param name="other">An object to compare with this object</param>
+        </member>
+        <member name="M:System.Index.GetHashCode">
+            <summary>Returns the hash code for this instance.</summary>
+        </member>
+        <member name="M:System.Index.op_Implicit(System.Int32)~System.Index">
+            <summary>Converts integer number to an Index.</summary>
+        </member>
+        <member name="M:System.Index.ToString">
+            <summary>Converts the value of the current Index object to its equivalent string representation.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.SkipLocalsInitAttribute">
+            <summary>
+            Used to indicate to the compiler that the <c>.locals init</c>
+            flag should not be set in method headers.
+            </summary>
+            <remarks>
+            This attribute is unsafe because it may reveal uninitialized memory to
+            the application in certain instances (e.g., reading from uninitialized
+            stackalloc'd memory). If applied to a method directly, the attribute
+            applies to that method and all nested functions (lambdas, local
+            functions) below it. If applied to a type or module, it applies to all
+            methods nested inside. This attribute is intentionally not permitted on
+            assemblies. Use at the module level instead to apply to multiple type
+            declarations.
+            </remarks>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+            <summary>Specifies that null is disallowed as an input even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+            <summary>Specifies that an output may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>Specifies that an output will not be null even if the corresponding type allows it. Specifies that an input argument was not null when the call returns.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter may be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+            <summary>Specifies that the output will be non-null if the named parameter is non-null.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with the associated parameter name.</summary>
+            <param name="parameterName">
+            The associated parameter name.  The output will be non-null if the argument to the parameter specified is non-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+            <summary>Gets the associated parameter name.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>Applied to a method that will never return under any circumstance.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>Specifies that the method will not return if the associated Boolean parameter is passed the specified value.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified parameter value.</summary>
+            <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable by diagnostics if the argument to
+            the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>Gets the condition parameter value.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute">
+            <summary>Specifies that the method or property will ensure that the listed field and property members have not-null values when returning with the specified return value condition.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String)">
+            <summary>Initializes the attribute with the specified return value condition and a field or property member.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+            <param name="member">
+            The field or property member that is promised to be not-null.
+            </param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String[])">
+            <summary>Initializes the attribute with the specified return value condition and list of field and property members.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+            <param name="members">
+            The list of field and property members that are promised to be not-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.Members">
+            <summary>Gets field or property member names.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute">
+            <summary>Specifies that the method or property will ensure that the listed field and property members have not-null values.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with a field or property member.</summary>
+            <param name="member">
+            The field or property member that is promised to be not-null.
+            </param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String[])">
+            <summary>Initializes the attribute with the list of field and property members.</summary>
+            <param name="members">
+            The list of field and property members that are promised to be not-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.Members">
+            <summary>Gets field or property member names.</summary>
+        </member>
+        <member name="T:JetBrains.Annotations.StringFormatMethodAttribute">
+             <summary>
+             Indicates that the marked method builds string by format pattern and (optional) arguments.
+             Parameter, which contains format string, should be given in constructor. The format string
+             should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/>-like form.
+             </summary>
+             <example><code>
+             [StringFormatMethod("message")]
+             void ShowError(string message, params object[] args) { /* do something */ }
+            
+             void Foo() {
+               ShowError("Failed: {0}"); // Warning: Non-existing argument in format string
+             }
+             </code></example>
+        </member>
+        <member name="M:JetBrains.Annotations.StringFormatMethodAttribute.#ctor(System.String)">
+            <param name="formatParameterName">
+            Specifies which parameter of an annotated method should be treated as format-string
+            </param>
+        </member>
+        <member name="T:JetBrains.Annotations.UsedImplicitlyAttribute">
+            <summary>
+            Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
+            so this symbol will not be marked as unused (as well as by other usage inspections).
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.MeansImplicitUseAttribute">
+            <summary>
+            Should be used on attributes and causes ReSharper to not mark symbols marked with such attributes
+            as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.Access">
+            <summary>Only entity marked with attribute considered used.</summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.Assign">
+            <summary>Indicates implicit assignment to a member.</summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.InstantiatedWithFixedConstructorSignature">
+            <summary>
+            Indicates implicit instantiation of a type with fixed constructor signature.
+            That means any unused constructor parameters won't be reported as such.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.InstantiatedNoFixedConstructorSignature">
+            <summary>Indicates implicit instantiation of a type.</summary>
+        </member>
+        <member name="T:JetBrains.Annotations.ImplicitUseTargetFlags">
+            <summary>
+            Specify what is considered used implicitly when marked
+            with <see cref="T:JetBrains.Annotations.MeansImplicitUseAttribute"/> or <see cref="T:JetBrains.Annotations.UsedImplicitlyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseTargetFlags.Members">
+            <summary>Members of entity marked with attribute are considered used.</summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseTargetFlags.WithMembers">
+            <summary>Entity marked with attribute and all its members considered used.</summary>
+        </member>
+        <member name="T:JetBrains.Annotations.PublicAPIAttribute">
+            <summary>
+            This attribute is intended to mark publicly available API
+            which should not be removed and so is treated as used.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.InstantHandleAttribute">
+            <summary>
+            Tells code analysis engine if the parameter is completely handled when the invoked method is on stack.
+            If the parameter is a delegate, indicates that delegate is executed while the method is executed.
+            If the parameter is an enumerable, indicates that it is enumerated while the method is executed.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.PureAttribute">
+             <summary>
+             Indicates that a method does not make any observable state changes.
+             The same as <c>System.Diagnostics.Contracts.PureAttribute</c>.
+             </summary>
+             <example><code>
+             [Pure] int Multiply(int x, int y) => x * y;
+            
+             void M() {
+               Multiply(123, 42); // Waring: Return value of pure method is not used
+             }
+             </code></example>
+        </member>
+        <member name="T:JetBrains.Annotations.LinqTunnelAttribute">
+            <summary>
+            Indicates that method is pure LINQ method, with postponed enumeration (like Enumerable.Select,
+            .Where). This annotation allows inference of [InstantHandle] annotation for parameters
+            of delegate type by analyzing LINQ method chains.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.NoEnumerationAttribute">
+            <summary>
+            Indicates that IEnumerable, passed as parameter, is not enumerated.
+            </summary>
+        </member>
+        <member name="M:LinqToDB.AspNet.Logging.OptionsBuilderExtensions.UseDefaultLogging(LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder,System.IServiceProvider)">
+            <summary>
+            Configures the connection to use the <see cref="T:Microsoft.Extensions.Logging.ILoggerFactory"/> resolved from the container.
+            </summary>
+            <param name="builder">Builder to configure.</param>
+            <param name="provider">Container used to resolve the factory.</param>
+            <returns>The builder instance so calls can be chained.</returns>
+        </member>
+        <member name="M:LinqToDB.AspNet.Logging.OptionsBuilderExtensions.UseLoggerFactory(LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Configures the connection to use the <see cref="T:Microsoft.Extensions.Logging.ILoggerFactory"/> passed in.
+            </summary>
+            <param name="builder">Builder to configure.</param>
+            <param name="factory">Factory used to resolve loggers.</param>
+            <returns>The builder instance so calls can be chained.</returns>
+        </member>
+        <member name="M:LinqToDB.AspNet.ServiceConfigurationExtensions.AddLinqToDB(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.IServiceProvider,LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+             <summary>
+                 Registers <see cref="T:LinqToDB.Data.DataConnection"/> as the service <see cref="T:LinqToDB.IDataContext"/> in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+                 You use this method when using dependency injection in your application, such as with ASP.NET.
+                 For more information on setting up dependency injection, see http://go.microsoft.com/fwlink/?LinkId=526890.
+             </summary>
+             <example>
+                 <code>
+                       public void ConfigureServices(IServiceCollection services)
+                       {
+                           var connectionString = "connection string to database";
+            
+                           services.AddLinqToDB(options => {
+                               options.UseSqlServer(connectionString);
+                           });
+                       }
+                   </code>
+             </example>
+             <param name="serviceCollection"> The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add services to. </param>
+             <param name="configure">
+                 <para>
+                     An action to configure the <see cref="T:LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder" /> for the context.
+                 </para>
+             </param>
+             <param name="lifetime"> The lifetime with which to register the Context service in the container.
+             For one connection per request use <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/> (the default).
+             </param>
+             <remarks>
+             	<para>
+             		This will only work when you have 1 database connection across your whole application.
+             		If your application needs multiple different connections with different configurations
+             		then use <see cref="M:LinqToDB.AspNet.ServiceConfigurationExtensions.AddLinqToDBContext``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.IServiceProvider,LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)"/> or <see cref="M:LinqToDB.AspNet.ServiceConfigurationExtensions.AddLinqToDBContext``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.IServiceProvider,LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)"/>.
+             	</para>
+             	<para>
+             		To Resolve the connection inject <see cref="T:LinqToDB.IDataContext"/> into your services.
+             	</para>
+             </remarks>
+             <returns>
+                 The same service collection so that multiple calls can be chained.
+             </returns>
+        </member>
+        <member name="M:LinqToDB.AspNet.ServiceConfigurationExtensions.AddLinqToDBContext``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.IServiceProvider,LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+             <summary>
+                 Registers <typeparamref name="TContext"/> as a service in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+                 You use this method when using dependency injection in your application, such as with ASP.NET.
+                 For more information on setting up dependency injection, see http://go.microsoft.com/fwlink/?LinkId=526890.
+             </summary>
+             <example>
+                 <code>
+                       public void ConfigureServices(IServiceCollection services)
+                       {
+                           var connectionString = "connection string to database";
+            
+                           services.AddLinqToDBContext&lt;MyContext&gt;(options => {
+                               options.UseSqlServer(connectionString);
+                           });
+                       }
+                   </code>
+             </example>
+             <typeparam name="TContext">
+             	The type of context to be registered. Must inherit from <see cref="T:LinqToDB.IDataContext"/>
+             	and expose a constructor that takes <see cref="T:LinqToDB.Configuration.LinqToDBConnectionOptions`1" /> (where T is <typeparamref name="TContext"/>)
+             	and passes it to the base constructor of <see cref="T:LinqToDB.Data.DataConnection" />.
+             </typeparam>
+             <param name="serviceCollection"> The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add services to. </param>
+             <param name="configure">
+                 <para>
+                     An action to configure the <see cref="T:LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder" /> for the context.
+                 </para>
+                 <para>
+                     In order for the options to be passed into your context, you need to expose a constructor on your context that takes
+                     <see cref="T:LinqToDB.Configuration.LinqToDBConnectionOptions`1" /> and passes it to the base constructor of <see cref="T:LinqToDB.Data.DataConnection" />.
+                 </para>
+             </param>
+             <param name="lifetime">
+             	The lifetime with which to register the Context service in the container.
+             	For one connection per request use <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/> (the default).
+             </param>
+             <remarks>
+             	This method should be used when a custom context is required or
+             	when multiple contexts with different configurations are required.
+             </remarks>
+             <returns>
+                 The same service collection so that multiple calls can be chained.
+             </returns>
+        </member>
+        <member name="M:LinqToDB.AspNet.ServiceConfigurationExtensions.AddLinqToDBContext``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.IServiceProvider,LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+             <summary>
+                 Registers <typeparamref name="TContext"/> as a service in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+                 You use this method when using dependency injection in your application, such as with ASP.NET.
+                 For more information on setting up dependency injection, see http://go.microsoft.com/fwlink/?LinkId=526890.
+             </summary>
+             <example>
+                 <code>
+                       public void ConfigureServices(IServiceCollection services)
+                       {
+                           var connectionString = "connection string to database";
+            
+                           services.AddLinqToDBContext&lt;IMyContext, MyContext&gt;(options => {
+                               options.UseSqlServer(connectionString);
+                           });
+                       }
+                   </code>
+             </example>
+             <typeparam name="TContext">
+             	The class or interface that will be used to resolve the context from the container.
+             </typeparam>
+             <typeparam name="TContextImplementation">
+            		The concrete implementation type used to fulfill requests for <typeparamref name="TContext"/> from the container.
+             	Must inherit from <see cref="T:LinqToDB.IDataContext"/> and <typeparamref name="TContext"/>
+             	and expose a constructor that takes <see cref="T:LinqToDB.Configuration.LinqToDBConnectionOptions`1" /> (where T is <typeparamref name="TContextImplementation"/>)
+             	and passes it to the base constructor of <see cref="T:LinqToDB.Data.DataConnection" />.
+             </typeparam>
+             <param name="serviceCollection"> The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add services to. </param>
+             <param name="configure">
+                 <para>
+                     An action to configure the <see cref="T:LinqToDB.Configuration.LinqToDBConnectionOptionsBuilder" /> for the context.
+                 </para>
+                 <para>
+                     In order for the options to be passed into your context, you need to expose a constructor on your context that takes
+                     <see cref="T:LinqToDB.Configuration.LinqToDBConnectionOptions`1" /> and passes it to the base constructor of <see cref="T:LinqToDB.Data.DataConnection" />.
+                 </para>
+             </param>
+             <param name="lifetime">
+             	The lifetime with which to register the Context service in the container.
+             	For one connection per request use <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/> (the default).
+             </param>
+             <remarks>
+             	This method should be used when a custom context is required or
+             	when multiple contexts with different configurations are required.
+             </remarks>
+             <returns>
+                 The same service collection so that multiple calls can be chained.
+             </returns>
+        </member>
+    </members>
+</doc>
