@@ -10,6 +10,7 @@ using System.Data;
 using NUnit.Framework;
 using CONCESIONARIO_PROYECTO.BBDD.Entitys;
 using LinqToDB.Configuration;
+using System.Data.Common;
 
 namespace CONCESIONARIO_PROYECTO.BBDD
 {
@@ -25,9 +26,9 @@ namespace CONCESIONARIO_PROYECTO.BBDD
         )] String configString)
         {
             // Obtenemos la conexion a la base de datos
-            String strConexion = ConfigurationManager.ConnectionStrings["CONEXION"].ConnectionString;
-
-            using (var db = new DataConnection(strConexion))
+            //String strConexion = ConfigurationManager.ConnectionStrings["CONEXION"].ConnectionString;
+           
+            using (var db = new DataConnection(configString))
             {
                 try
                 {

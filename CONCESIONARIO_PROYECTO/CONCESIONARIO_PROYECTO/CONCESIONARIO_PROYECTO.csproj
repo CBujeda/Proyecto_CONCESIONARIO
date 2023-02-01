@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\linq2db.SqlServer.4.4.0\build\linq2db.SqlServer.props" Condition="Exists('..\packages\linq2db.SqlServer.4.4.0\build\linq2db.SqlServer.props')" />
   <Import Project="..\packages\NUnit.3.13.3\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" />
   <Import Project="..\packages\linq2db.MySql.4.4.0\build\linq2db.MySql.props" Condition="Exists('..\packages\linq2db.MySql.4.4.0\build\linq2db.MySql.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -302,6 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="BBDD\CopyMe.MySql.tt.txt" />
     <Content Include="Concesionario.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -322,6 +324,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="LinqToDB.Templates\CopyMe.MySql.tt.txt" />
+    <Content Include="LinqToDB.Templates\CopyMe.SqlServer.tt.txt" />
     <Content Include="LinqToDB.Templates\Validation.ttinclude" />
     <Content Include="LinqToDB.Templates\T4Model.ttinclude" />
     <Content Include="LinqToDB.Templates\PluralizationService.ttinclude" />
@@ -338,6 +341,9 @@
     <Content Include="LinqToDB.Templates\EditableObject.ttinclude" />
     <Content Include="LinqToDB.Templates\DataModel.ttinclude" />
     <Content Include="LinqToDB.Templates\DataAnnotations.ttinclude" />
+    <Content Include="LinqToDB.Templates\LinqToDB.SqlServer.ttinclude" />
+    <Content Include="LinqToDB.Templates\LinqToDB.SqlServer.Tools.ttinclude" />
+    <Content Include="LinqToDB.Templates\LinqToDB.SqlServer.SqlTypes.Tools.ttinclude" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -480,6 +486,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\linq2db.MySql.4.4.0\build\linq2db.MySql.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\linq2db.MySql.4.4.0\build\linq2db.MySql.props'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.3\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\linq2db.SqlServer.4.4.0\build\linq2db.SqlServer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\linq2db.SqlServer.4.4.0\build\linq2db.SqlServer.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

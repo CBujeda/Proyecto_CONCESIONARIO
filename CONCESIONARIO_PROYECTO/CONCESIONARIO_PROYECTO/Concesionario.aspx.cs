@@ -14,7 +14,7 @@ namespace CONCESIONARIO_PROYECTO
         {
             if (!IsPostBack) {
                 ConcesionarioRepository cr = new ConcesionarioRepository();
-                //cr.CreateBBDD();
+                cr.CreateBBDD("server=localhost;Port=3306;uid=root;pwd=root;database=concesionario");
             }
         }
     }
