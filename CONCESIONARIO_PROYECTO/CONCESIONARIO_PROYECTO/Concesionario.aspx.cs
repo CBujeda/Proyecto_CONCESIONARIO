@@ -13,8 +13,15 @@ namespace CONCESIONARIO_PROYECTO
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                ConcesionarioRepository cr = new ConcesionarioRepository();
-                cr.CreateBBDD("server=localhost;Port=3306;uid=root;pwd=root;database=concesionario");
+                using (var db = new Concesionario())
+                {
+                    var q =
+                        from c in db.Concesionario
+                        select c;
+
+                    foreach (var c in q)
+                        Console.WriteLine(c.ContactName);
+                }
             }
         }
     }
