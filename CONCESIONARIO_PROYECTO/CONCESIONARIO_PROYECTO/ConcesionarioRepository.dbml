@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Concesionario" Class="ConcesionarioRepositoryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-T3IV6UM;Initial Catalog=Concesionario;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ConcesionarioConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Marcas" Member="Marcas">
+    <Type Name="Marcas">
+      <Column Name="id_marca" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="pais" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="anno_creacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Marcas_Modelos" Member="Modelos" ThisKey="id_marca" OtherKey="id_marca" Type="Modelos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modelos" Member="Modelos">
+    <Type Name="Modelos">
+      <Column Name="id_modelo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_marca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="modelo" Type="System.String" DbType="NVarChar(145)" CanBeNull="true" />
+      <Column Name="motor" Type="System.String" DbType="NVarChar(145)" CanBeNull="true" />
+      <Association Name="Modelos_Vehiculos" Member="Vehiculos" ThisKey="id_modelo" OtherKey="id_modelo" Type="Vehiculos" />
+      <Association Name="Marcas_Modelos" Member="Marcas" ThisKey="id_marca" OtherKey="id_marca" Type="Marcas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehiculos" Member="Vehiculos">
+    <Type Name="Vehiculos">
+      <Column Name="id_vehiculo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(145)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(145)" CanBeNull="true" />
+      <Column Name="id_modelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Modelos_Vehiculos" Member="Modelos" ThisKey="id_modelo" OtherKey="id_modelo" Type="Modelos" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

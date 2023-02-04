@@ -12,17 +12,13 @@ namespace CONCESIONARIO_PROYECTO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) {
-                using (var db = new Concesionario())
-                {
-                    var q =
-                        from c in db.Concesionario
-                        select c;
+            ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
+            concesionarioTabla.DataSource = from Vehiculos in dbRep.Vehiculos
+                                            join Modelos in dbRep.Modelos on Vehiculos.id_modelo equals Modelos.id_modelo
+                                            join Marcas in dbRep.Marcas on Modelos.id_marca equals Marcas.id_marca
+                                            select new { Vehiculos.nombre, Modelos.motor, nombreMarca = Marcas.nombre };
 
-                    foreach (var c in q)
-                        Console.WriteLine(c.ContactName);
-                }
-            }
+            concesionarioTabla.DataBind();
         }
     }
 }
