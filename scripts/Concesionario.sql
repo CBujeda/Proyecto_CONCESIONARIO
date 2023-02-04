@@ -30,6 +30,14 @@ go
 Alter Table Vehiculos add Constraint Vehiculos_Modelos_FK
 Foreign Key(id_modelo) references Modelos(id_modelo)
 go
-INSERT INTO Marcas VALUES ('SpaceX', 'EEUU', '2022-05-14');
+INSERT INTO Marcas VALUES ('SpaceX', 'EEUU', '2012-10-04');
+INSERT INTO Marcas VALUES ('ApoloXII', 'EEUU', '2022-05-14');
+INSERT INTO Marcas VALUES ('Halcon Milenario', 'Inframundo', '1920-07-09');
+go
 INSERT INTO Modelos VALUES ('1', 'Dragon', 'Reactor');
+INSERT INTO Modelos VALUES ('1', 'NASA', 'ReactorNASA');
+INSERT INTO Modelos VALUES ('1', 'StarWars', 'ReactorGalactico');
+go
 INSERT INTO Vehiculos VALUES ('Star Ship', 'Cohete', '1');
+INSERT INTO Vehiculos VALUES ('Univers Ship', 'Cohete', '1');
+INSERT INTO Vehiculos VALUES ('Halcon Wars', 'Nave', '1');
