@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CONCESIONARIO_PROYECTO.BBDD;
 
 namespace CONCESIONARIO_PROYECTO
 {
