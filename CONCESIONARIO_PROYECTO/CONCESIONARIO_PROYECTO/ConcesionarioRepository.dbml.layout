@@ -14,7 +14,7 @@
         <elementListCompartment Id="1a899b21-7231-44df-80c2-0e8a9a282d6e" absoluteBounds="3.5149999999999997, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.47679768880208); (3.5 : 1.47679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 1.47679768880208); (3.5 : 1.47679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConcesionarioRepositoryDataContext/Marcas/Marcas_Modelos" />
       <nodes>
         <classShapeMoniker Id="442fd48a-1a37-42b6-b25b-b5f78e0ab571" />
@@ -27,7 +27,7 @@
         <elementListCompartment Id="eefef06f-a166-4a59-90c5-2ec1f7a079f2" absoluteBounds="6.1400000000000006, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 1.47679768880208); (6.125 : 1.47679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.47679768880208); (6.125 : 1.47679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConcesionarioRepositoryDataContext/Modelos/Modelos_Vehiculos" />
       <nodes>
         <classShapeMoniker Id="92a122fe-1ce8-49f3-876c-e648f7f21375" />

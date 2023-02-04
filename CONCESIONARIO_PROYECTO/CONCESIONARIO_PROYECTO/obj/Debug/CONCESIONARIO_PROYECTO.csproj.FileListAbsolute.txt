@@ -169,7 +169,6 @@ C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CON
 C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CONCESIONARIO_PROYECTO\CONCESIONARIO_PROYECTO\bin\roslyn\VBCSCompiler.exe
 C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CONCESIONARIO_PROYECTO\CONCESIONARIO_PROYECTO\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CONCESIONARIO_PROYECTO\CONCESIONARIO_PROYECTO\bin\Antlr3.Runtime.dll
-C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CONCESIONARIO_PROYECTO\CONCESIONARIO_PROYECTO\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CONCESIONARIO_PROYECTO\CONCESIONARIO_PROYECTO\bin\AspNet.ScriptManager.jQuery.dll
 C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CONCESIONARIO_PROYECTO\CONCESIONARIO_PROYECTO\bin\BouncyCastle.Crypto.dll
 C:\Users\ANDREEA\OneDrive\Escritorio\AD\Concesionario\Proyecto_CONCESIONARIO\CONCESIONARIO_PROYECTO\CONCESIONARIO_PROYECTO\bin\Google.Protobuf.dll
