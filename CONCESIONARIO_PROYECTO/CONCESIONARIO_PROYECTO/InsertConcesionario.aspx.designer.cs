@@ -42,13 +42,13 @@ namespace CONCESIONARIO_PROYECTO
         protected global::System.Web.UI.WebControls.TextBox tipoVehiculo;
 
         /// <summary>
-        /// Control modelo.
+        /// Control newModelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox modelo;
+        protected global::System.Web.UI.WebControls.DropDownList newModelo;
 
         /// <summary>
         /// Control motor.
