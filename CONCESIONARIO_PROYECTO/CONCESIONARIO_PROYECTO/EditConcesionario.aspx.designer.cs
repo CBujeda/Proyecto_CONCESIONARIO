@@ -11,7 +11,7 @@ namespace CONCESIONARIO_PROYECTO
 {
 
 
-    public partial class InsertConcesionario
+    public partial class EditConcesionario
     {
 
         /// <summary>

@@ -38,7 +38,7 @@
         <div class="container-fluid ">
 
             <p></p>
-            <asp:GridView class="table table-dark table-hover table-striped" ID="concesionarioTabla" runat="server" AutoGenerateColumns="False">
+            <asp:GridView class="table table-dark table-hover table-striped" ID="concesionarioTabla" runat="server" AutoGenerateColumns="False" OnRowCommand="concesionarioTabla_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="idVehiculo" HeaderText="ID" />
                     <asp:BoundField DataField="nombreVehiculo" HeaderText="Nombre Vehiculo" />
@@ -47,7 +47,7 @@
                     <asp:BoundField DataField="motor" HeaderText="Motor" />
                     <asp:BoundField DataField="nombreMarca" HeaderText="Marca" />
                     <asp:BoundField DataField="pais" HeaderText="Pais" />
-                    <asp:BoundField DataField="anno" HeaderText="Año" />
+                    <asp:BoundField DataField="anno" HeaderText="Año Marca" />
                     <asp:ButtonField ButtonType="Button" Text="Edit" CommandName="editVehiculo" HeaderText="">
                         <ControlStyle CssClass="btn btn-primary" />
                     </asp:ButtonField>

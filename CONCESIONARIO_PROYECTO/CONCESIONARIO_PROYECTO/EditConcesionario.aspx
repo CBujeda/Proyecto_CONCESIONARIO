@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InsertConcesionario.aspx.cs" Inherits="CONCESIONARIO_PROYECTO.InsertConcesionario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditConcesionario.aspx.cs" Inherits="CONCESIONARIO_PROYECTO.EditConcesionario" %>
 
 <!DOCTYPE html>
 

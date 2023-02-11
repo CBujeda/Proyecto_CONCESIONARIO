@@ -8,8 +8,14 @@ using System.Data;
 
 namespace CONCESIONARIO_PROYECTO
 {
-    public partial class InsertConcesionario : System.Web.UI.Page
+   
+    public partial class EditConcesionario : System.Web.UI.Page
     {
+        private string idVehiculo;
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
