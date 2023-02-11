@@ -54,10 +54,10 @@
                                     <asp:TextBox ID="newIdVehiculo" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Nombre Vehiculo</label>
-                                    <asp:TextBox ID="nombreVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newNombreVehiculo" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Tipo</label>
-                                    <asp:TextBox ID="tipoVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newTipoVehiculo" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Modelo</label>
                                    <%--  <asp:TextBox ID="modelo" class="form-control" runat="server"></asp:TextBox>--%>
