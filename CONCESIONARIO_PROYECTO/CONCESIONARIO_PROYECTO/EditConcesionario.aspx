@@ -34,6 +34,7 @@
             </div>
         </div>
     </nav>
+
     <form id="form1" runat="server">
         <div class="container-fluid ">
             <div class="row">
@@ -50,6 +51,8 @@
                         <div class="col">
                             <div class="row justify-content-center">
                                 <div class="col-6">
+                                    <asp:TextBox ID="newIdVehiculo" class="form-control" runat="server"></asp:TextBox>
+
                                     <label class="form-label">Nombre Vehiculo</label>
                                     <asp:TextBox ID="nombreVehiculo" class="form-control" runat="server"></asp:TextBox>
 

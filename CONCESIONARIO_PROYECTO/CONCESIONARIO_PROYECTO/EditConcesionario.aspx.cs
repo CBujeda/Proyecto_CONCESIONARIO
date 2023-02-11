@@ -18,6 +18,17 @@ namespace CONCESIONARIO_PROYECTO
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string id;
+            try
+            {
+                id = Request.QueryString["id"];
+            }
+            catch (Exception)
+            {
+                id = "-1";
+            }
+            int idInt = Convert.ToInt32(id);
+            newIdVehiculo.Text = id;
             ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
             List <Modelos>concesionarioTabla = dbRep.Modelos.ToList();
             

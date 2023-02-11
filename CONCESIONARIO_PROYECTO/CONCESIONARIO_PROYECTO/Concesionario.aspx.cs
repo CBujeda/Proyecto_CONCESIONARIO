@@ -18,7 +18,6 @@ namespace CONCESIONARIO_PROYECTO
                 db.CreateDatabase();
             }
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             CreateDatabase();
@@ -39,6 +38,11 @@ namespace CONCESIONARIO_PROYECTO
         private void reload()
         { // Recargamos pagina
             Response.Redirect(Page.Request.Path, false);
+            Context.ApplicationInstance.CompleteRequest();
+        }
+        private void editRedirect(String id)
+        {  // redireccion a edit
+            Response.Redirect("editConcesionario?id=" + id, false);
             Context.ApplicationInstance.CompleteRequest();
         }
         protected void concesionarioTabla_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -64,6 +68,7 @@ namespace CONCESIONARIO_PROYECTO
                 GridViewRow selectedRow = concesionarioTabla.Rows[index];// Obtenemos row
                 TableCell facturaID = selectedRow.Cells[0];     // Obtenemos id de factura 0 = ID
                 string id = facturaID.Text;                // Obtenemos string con id
+                editRedirect(id);
             }
         }
     }

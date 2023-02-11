@@ -328,6 +328,7 @@
     <Content Include="Global.asax" />
     <Content Include="Imgs\kitty.png" />
     <Content Include="Imgs\vaporeon.png" />
+    <Content Include="EditConcesionario.aspx" />
     <Content Include="InsertConcesionario.aspx" />
     <Content Include="LinqToDB.Templates\CopyMe.MySql.tt.txt" />
     <Content Include="LinqToDB.Templates\CopyMe.SqlServer.tt.txt" />
@@ -457,6 +458,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="EditConcesionario.aspx.cs">
+      <DependentUpon>EditConcesionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditConcesionario.aspx.designer.cs">
+      <DependentUpon>EditConcesionario.aspx</DependentUpon>
     </Compile>
     <Compile Include="InsertConcesionario.aspx.cs">
       <DependentUpon>InsertConcesionario.aspx</DependentUpon>
