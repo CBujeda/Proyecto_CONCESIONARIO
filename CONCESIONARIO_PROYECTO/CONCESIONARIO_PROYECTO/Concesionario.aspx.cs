@@ -25,14 +25,17 @@ namespace CONCESIONARIO_PROYECTO
             concesionarioTabla.DataSource = from Vehiculos in dbRep.Vehiculos
                                             join Modelos in dbRep.Modelos on Vehiculos.id_modelo equals Modelos.id_modelo
                                             join Marcas in dbRep.Marcas on Modelos.id_marca equals Marcas.id_marca
-                                            select new {idVehiculo = Vehiculos.id_vehiculo,
-                                                        nombreVehiculo = Vehiculos.nombre,
-                                                        tipoVehiculo = Vehiculos.tipo,
-                                                        Modelos.modelo,
-                                                        Modelos.motor,
-                                                        nombreMarca = Marcas.nombre,
-                                                        Marcas.pais, 
-                                                        anno = Marcas.anno_creacion};
+                                            select new
+                                            {
+                                                idVehiculo = Vehiculos.id_vehiculo,
+                                                nombreVehiculo = Vehiculos.nombre,
+                                                tipoVehiculo = Vehiculos.tipo,
+                                                Modelos.modelo,
+                                                Modelos.motor,
+                                                nombreMarca = Marcas.nombre,
+                                                Marcas.pais,
+                                                anno = Marcas.anno_creacion
+                                            };
             concesionarioTabla.DataBind();
         }
         private void reload()

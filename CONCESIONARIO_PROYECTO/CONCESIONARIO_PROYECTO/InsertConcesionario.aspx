@@ -28,7 +28,7 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
@@ -57,7 +57,7 @@
                                     <asp:TextBox ID="tipoVehiculo" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Modelo</label>
-                                   <%--  <asp:TextBox ID="modelo" class="form-control" runat="server"></asp:TextBox>--%>
+                                    <%--  <asp:TextBox ID="modelo" class="form-control" runat="server"></asp:TextBox>--%>
                                     <asp:DropDownList ID="newModelo" class="form-select" runat="server"></asp:DropDownList>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Crear" OnClick="newActualizar_Click" />
                                 </div>

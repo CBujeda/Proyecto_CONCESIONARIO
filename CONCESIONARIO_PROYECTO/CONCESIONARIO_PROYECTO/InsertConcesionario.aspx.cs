@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,12 +12,15 @@ namespace CONCESIONARIO_PROYECTO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
-            List <Modelos>concesionarioTabla = dbRep.Modelos.ToList();
-            
-            for (int i =0; i<concesionarioTabla.Count; i++)
+            if (!IsPostBack)
             {
-                newModelo.Items.Insert(0, new ListItem(concesionarioTabla[i].modelo, concesionarioTabla[i].id_modelo.ToString()));
+                ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
+                List<Modelos> concesionarioTabla = dbRep.Modelos.ToList();
+
+                for (int i = 0; i < concesionarioTabla.Count; i++)
+                {
+                    newModelo.Items.Insert(0, new ListItem(concesionarioTabla[i].modelo, concesionarioTabla[i].id_modelo.ToString()));
+                }
             }
         }
         private void volver()
@@ -39,10 +42,11 @@ namespace CONCESIONARIO_PROYECTO
             {
                 Console.WriteLine($"Unable to parse '{input}'");
             }
-            Vehiculos v = new Vehiculos {
-                    nombre = nombreVehiculo.Text,
-                    tipo = tipoVehiculo.Text,
-                    id_modelo = result,
+            Vehiculos v = new Vehiculos
+            {
+                nombre = nombreVehiculo.Text,
+                tipo = tipoVehiculo.Text,
+                id_modelo = result,
             };
             db.Vehiculos.InsertOnSubmit(v);
             db.SubmitChanges();
