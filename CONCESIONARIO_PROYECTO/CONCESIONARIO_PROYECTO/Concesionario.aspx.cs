@@ -9,6 +9,10 @@ namespace CONCESIONARIO_PROYECTO
 {
     public partial class Concesionario : System.Web.UI.Page
     {
+        /*
+         * Pre:
+         * Post: Metodo el cual verifica si la bbd esta creada y en caso de que no lo este la crea
+         */
         public void CreateDatabase()
         {
             ConcesionarioRepositoryDataContext db = new ConcesionarioRepositoryDataContext();
@@ -18,6 +22,12 @@ namespace CONCESIONARIO_PROYECTO
                 db.CreateDatabase();
             }
         }
+
+        /*
+         * Pre:
+         * Post: Metodo el cual al cargar la pagina mustra una tabla con los diferentes vehiculos y
+         *       sus respectivas especificaciones.
+         */
         protected void Page_Load(object sender, EventArgs e)
         {
             CreateDatabase();
@@ -38,39 +48,62 @@ namespace CONCESIONARIO_PROYECTO
                                             };
             concesionarioTabla.DataBind();
         }
+
+        /*
+         * Pre:
+         * Post: Metodo el cual recarga la pagina.
+         */
         private void reload()
         { // Recargamos pagina
             Response.Redirect(Page.Request.Path, false);
             Context.ApplicationInstance.CompleteRequest();
         }
+
+        /*
+         * Pre:
+         * Post: MEtodo de redireccion a la edición
+         */
         private void editRedirect(String id)
         {  // redireccion a edit
-            Response.Redirect("editConcesionario?id=" + id, false);
-            Context.ApplicationInstance.CompleteRequest();
+            if(id != null && id != "") { 
+                Response.Redirect("editConcesionario?id=" + id, false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
         }
+
+        /*
+         * Pre:
+         * Post: Metodo el cual es llamado al ejecutar un RowCommand el cual realiza differentes acciones
+         */
         protected void concesionarioTabla_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
-            // CommandName property to determine which button was clicked.
+            /*
+             * Pre:
+             * Post: (deleteVehiculo) seccion la cual borra un vehiculo seleccionado
+             */
             if (e.CommandName == "deleteVehiculo")   // si pulsar delete
             {
                 int index = Convert.ToInt32(e.CommandArgument); // Obtenemos id del row
                 GridViewRow selectedRow = concesionarioTabla.Rows[index];// Obtenemos row
-                TableCell facturaID = selectedRow.Cells[0];     // Obtenemos id de factura 0 = ID
-                string id = facturaID.Text;                // Obtenemos string con id
+                TableCell vehiculoID = selectedRow.Cells[0];     // Obtenemos id de vehiculo 0 = ID
+                string id = vehiculoID.Text;                // Obtenemos string con id
                 int idInt = Convert.ToInt32(id);
-                System.Diagnostics.Debug.Write(idInt + "\n");
                 Vehiculos vehiculo = dbRep.Vehiculos.SingleOrDefault(x => x.id_vehiculo == idInt);
                 dbRep.Vehiculos.DeleteOnSubmit(vehiculo);
                 dbRep.SubmitChanges();
                 reload();
             }
+            /*
+             * Pre:
+             * Post: (editVehiculo) seccion la cual redirige al usuario alformulario de edicion
+             */
             else if (e.CommandName == "editVehiculo") // si pulsar edit
             {
                 int index = Convert.ToInt32(e.CommandArgument); // Obtenemos id del row
                 GridViewRow selectedRow = concesionarioTabla.Rows[index];// Obtenemos row
-                TableCell facturaID = selectedRow.Cells[0];     // Obtenemos id de factura 0 = ID
-                string id = facturaID.Text;                // Obtenemos string con id
+                TableCell vehiculoID = selectedRow.Cells[0];     // Obtenemos id de vehiculo 0 = ID
+                string id = vehiculoID.Text;                // Obtenemos string con id
                 editRedirect(id);
             }
         }
