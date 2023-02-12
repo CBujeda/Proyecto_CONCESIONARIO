@@ -11,6 +11,11 @@ namespace CONCESIONARIO_PROYECTO
 
     public partial class EditConcesionario : System.Web.UI.Page
     {
+        /*
+         * Pre:
+         * Post: Metodo con el cual al cargar la pantalla principal inserta los datos
+         *       por pantalla.
+         */
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -19,10 +24,15 @@ namespace CONCESIONARIO_PROYECTO
                 try
                 {
                     id = Request.QueryString["id"];
+                    if (id.Equals("") && id.Equals(" "))    //Saltamos errores
+                    {
+                        volver();
+                    }
                 }
                 catch (Exception)
                 {
                     id = "-1";
+                    volver();
                 }
                 int idInt = Convert.ToInt32(id);
                 newIdVehiculo.Text = id;
@@ -30,10 +40,9 @@ namespace CONCESIONARIO_PROYECTO
                 Vehiculos vehiculo = dbRep.Vehiculos.SingleOrDefault(x => x.id_vehiculo == idInt);
                 newNombreVehiculo.Text = vehiculo.nombre;
                 newTipoVehiculo.Text = vehiculo.tipo;
-                List<Modelos> concesionarioTabla = dbRep.Modelos.ToList();
-                Modelos modelo = dbRep.Modelos.SingleOrDefault(x => x.id_modelo == vehiculo.id_modelo);
+                List<Modelos> concesionarioTabla = dbRep.Modelos.ToList();  // Obtenemos una lista de modelos
+                Modelos modelo = dbRep.Modelos.SingleOrDefault(x => x.id_modelo == vehiculo.id_modelo); // Buscamos el modelo correspondiente
                 newModelo.Items.Insert(0, new ListItem(modelo.modelo, vehiculo.id_modelo.ToString()));
-
                 for (int i = 0; i < concesionarioTabla.Count; i++)
                 {
                     if (concesionarioTabla[i].id_modelo != modelo.id_modelo)
@@ -43,11 +52,21 @@ namespace CONCESIONARIO_PROYECTO
                 }
             }
         }
+
+        /*
+         * Pre:
+         * Post: Metodo de redireccion la ventana principal.
+         */
         private void volver()
         { // Recargamos pagina
             Response.Redirect("/Concesionario.aspx", false);
             Context.ApplicationInstance.CompleteRequest();
         }
+
+        /*
+         * Pre:
+         * Post: Metodo el cual es llamado al clicar en la actualizacion del vehiculo
+         */
         protected void newActualizar_Click(object sender, EventArgs e)
         {
             ConcesionarioRepositoryDataContext db = new ConcesionarioRepositoryDataContext();
@@ -64,42 +83,17 @@ namespace CONCESIONARIO_PROYECTO
             {
                 Console.WriteLine($"Unable to parse '{input}'");
             }
-            //Problemas ...
-            //System.Diagnostics.Debug.Write(idvehic + "\n");
+
             String nombreVehiculo = newNombreVehiculo.Text;
             String tipoVehiculo = newTipoVehiculo.Text;
-            Vehiculos vehiculo = db.Vehiculos.FirstOrDefault(x => x.id_vehiculo == idvehic);
+            Vehiculos vehiculo = db.Vehiculos.FirstOrDefault(x => x.id_vehiculo == idvehic);    // Buesqueda del vehiculo en memoria
             vehiculo.id_vehiculo = idvehic;
             vehiculo.nombre = nombreVehiculo;
             vehiculo.tipo = tipoVehiculo;
             vehiculo.id_modelo = result;
-
-            System.Diagnostics.Debug.Write(
-                vehiculo.id_vehiculo + "\n" +
-                vehiculo.nombre + "\n" +
-                vehiculo.tipo + "\n" +
-                vehiculo.Modelos.id_modelo + "\n");
-
-            System.Diagnostics.Debug.Write(
-                idvehic + "\n" +
-                nombreVehiculo + "\n" +
-                tipoVehiculo + "\n" +
-                result + "\n");
-
-            //var query = from Vehiculos in db.Vehiculos
-            //            where Vehiculos.id_vehiculo == idvehic
-            //            select Vehiculos;
-            //foreach (Vehiculos vehiculo in query)
-            //{
-            //    vehiculo.id_vehiculo = idvehic;
-            //    vehiculo.nombre = newNombreVehiculo.Text;
-            //    vehiculo.tipo = newTipoVehiculo.Text;
-            //    vehiculo.id_modelo = result;
-            //}
-
             try
             {
-                db.SubmitChanges();
+                db.SubmitChanges(); // Enviamos datos
             }
             catch (Exception r)
             {
