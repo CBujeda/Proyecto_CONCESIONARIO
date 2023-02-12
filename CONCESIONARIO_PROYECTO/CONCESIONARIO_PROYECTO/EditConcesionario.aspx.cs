@@ -20,19 +20,21 @@ namespace CONCESIONARIO_PROYECTO
         {
             if (!IsPostBack)
             {
-                string id;
+                string id = "";
                 try
                 {
                     id = Request.QueryString["id"];
-                    if (id.Equals("") && id.Equals(" "))    //Saltamos errores
-                    {
-                        volver();
-                    }
+                   
                 }
                 catch (Exception)
                 {
                     id = "-1";
                     volver();
+                }
+                if (id == "" || id == " " || id == null)    //Saltamos errores
+                {
+                    volver();
+                    id = "1";
                 }
                 int idInt = Convert.ToInt32(id);
                 newIdVehiculo.Text = id;

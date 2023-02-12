@@ -28,10 +28,6 @@
                         <a class="nav-link" href="InsertConcesionario">Insertar</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
@@ -48,7 +44,7 @@
                     <asp:BoundField DataField="motor" HeaderText="Motor" />
                     <asp:BoundField DataField="nombreMarca" HeaderText="Marca" />
                     <asp:BoundField DataField="pais" HeaderText="Pais" />
-                    <asp:BoundField DataField="anno" HeaderText="Año Marca" />
+                    <asp:BoundField DataField="anno" HeaderText="Año Marca" DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:ButtonField ButtonType="Button" Text="Edit" CommandName="editVehiculo" HeaderText="">
                         <ControlStyle CssClass="btn btn-primary" />
                     </asp:ButtonField>
