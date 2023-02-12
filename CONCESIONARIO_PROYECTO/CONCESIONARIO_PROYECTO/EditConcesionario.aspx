@@ -10,6 +10,7 @@
     <title>ConcesionariusMaximusEdit</title>
 </head>
 <body>
+    <%-- Navbar --%>
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +35,7 @@
             </div>
         </div>
     </nav>
-
+    <%-- FORM --%>
     <form id="form1" runat="server">
         <div class="container-fluid ">
             <div class="row">
@@ -51,7 +52,9 @@
                         <div class="col">
                             <div class="row justify-content-center">
                                 <div class="col-6">
-                                    <asp:TextBox ID="newIdVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <h1>Editar Vehiculo</h1>
+                                    <%-- Gardamos la ID del vehiculo --%>
+                                    <asp:TextBox ID="newIdVehiculo" style="display:none" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Nombre Vehiculo</label>
                                     <asp:TextBox ID="newNombreVehiculo" class="form-control" runat="server"></asp:TextBox>
@@ -71,6 +74,7 @@
             </div>
         </div>
     </form>
+    <%-- Js de bootstrap --%>
     <script src="Scripts/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

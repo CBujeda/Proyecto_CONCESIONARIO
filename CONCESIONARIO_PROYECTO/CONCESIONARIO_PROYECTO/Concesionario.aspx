@@ -10,6 +10,7 @@
     <title>ConcesionariusMaximus</title>
 </head>
 <body>
+    <%-- Navbar --%>
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,8 +37,8 @@
     </nav>
     <form id="form1" runat="server">
         <div class="container-fluid ">
-
             <p></p>
+            <%-- Gris view el cual muestra los datos y podemos clicar en edit y delete de forma itrativa --%>
             <asp:GridView class="table table-dark table-hover table-striped" ID="concesionarioTabla" runat="server" AutoGenerateColumns="False" OnRowCommand="concesionarioTabla_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="idVehiculo" HeaderText="ID" />
@@ -58,6 +59,7 @@
             </asp:GridView>
         </div>
     </form>
+    <%-- Script bootstrap --%>
     <script src="Scripts/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

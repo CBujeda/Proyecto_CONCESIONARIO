@@ -10,6 +10,7 @@
     <title>ConcesionariusMaximusInsert</title>
 </head>
 <body>
+    <%-- Navbar --%>
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +51,7 @@
                         <div class="col">
                             <div class="row justify-content-center">
                                 <div class="col-6">
+                                    <h1>Añadir Vehiculo</h1>
                                     <label class="form-label">Nombre Vehiculo</label>
                                     <asp:TextBox ID="nombreVehiculo" class="form-control" runat="server"></asp:TextBox>
 
@@ -58,6 +60,7 @@
 
                                     <label class="form-label">Modelo</label>
                                     <%--  <asp:TextBox ID="modelo" class="form-control" runat="server"></asp:TextBox>--%>
+                                    <%-- Dropdown de los datos de modelo --%>
                                     <asp:DropDownList ID="newModelo" class="form-select" runat="server"></asp:DropDownList>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Crear" OnClick="newActualizar_Click" />
                                 </div>
@@ -68,6 +71,7 @@
             </div>
         </div>
     </form>
+    <%-- Script Bootstrap --%>
     <script src="Scripts/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
