@@ -24,22 +24,22 @@ namespace CONCESIONARIO_PROYECTO
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control nombreVehiculo.
+        /// Control nombreModelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreVehiculo;
+        protected global::System.Web.UI.WebControls.TextBox nombreModelo;
 
         /// <summary>
-        /// Control tipoVehiculo.
+        /// Control newMotor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tipoVehiculo;
+        protected global::System.Web.UI.WebControls.TextBox newMotor;
 
         /// <summary>
         /// Control newMarca.

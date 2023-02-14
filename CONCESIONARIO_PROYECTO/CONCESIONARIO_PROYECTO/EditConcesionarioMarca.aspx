@@ -34,10 +34,10 @@
                         <a class="nav-link" href="InsertConcesionario">Insertar vehiculo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InsertConcesionarioMarca">Insertar Marca</a>
+                        <a class="nav-link" href="InsertConcesionarioModelo">Insertar Modelo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InsertConcesionarioModelo">Insertar Modelo</a>
+                        <a class="nav-link" href="InsertConcesionarioMarca">Insertar Marca</a>
                     </li>
                 </ul>
             </div>
@@ -61,17 +61,17 @@
                             <div class="row justify-content-center">
                                 <div class="col-6">
                                     <h1>Editar Marca</h1>
-                                    <%-- Gardamos la ID del vehiculo --%>
-                                    <asp:TextBox ID="newIdVehiculo" style="display:none" class="form-control" runat="server"></asp:TextBox>
+                                    <%-- Gardamos la ID de la Marca --%>
+                                    <asp:TextBox ID="newIdMarca" Style="display: none" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Nombre Marca</label>
-                                    <asp:TextBox ID="newNombreVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newNombreMarca" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Pais</label>
-                                    <asp:TextBox ID="newTipoVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newPais" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Fecha</label>
-                                     <asp:TextBox ID="newMarcaFecha" type="date" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newMarcaFecha" type="date" class="form-control" runat="server"></asp:TextBox>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Actualizar" OnClick="newActualizar_Click" />
                                 </div>
                             </div>

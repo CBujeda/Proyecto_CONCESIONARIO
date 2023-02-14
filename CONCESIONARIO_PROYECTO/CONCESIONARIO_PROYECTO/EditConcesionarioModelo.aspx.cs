@@ -37,13 +37,13 @@ namespace CONCESIONARIO_PROYECTO
                     id = "1";
                 }
                 int idInt = Convert.ToInt32(id);
-                newIdVehiculo.Text = id;
+                newIdModelo.Text = id;
                 ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
                 Modelos modelos = dbRep.Modelos.SingleOrDefault(x => x.id_modelo == idInt);
-                newNombreVehiculo.Text = modelos.modelo;
-                newTipoVehiculo.Text = modelos.motor;
-                List<Marcas> concesionarioTabla = dbRep.Marcas.ToList();  // Obtenemos una lista de modelos
-                Marcas marca = dbRep.Marcas.SingleOrDefault(x => x.id_marca == modelos.id_marca); // Buscamos el modelo correspondiente
+                newNombreModelo.Text = modelos.modelo;
+                newMotor.Text = modelos.motor;
+                List<Marcas> concesionarioTabla = dbRep.Marcas.ToList();                            // Obtenemos una lista de modelos
+                Marcas marca = dbRep.Marcas.SingleOrDefault(x => x.id_marca == modelos.id_marca);   // Buscamos el modelo correspondiente
                 newMarca.Items.Insert(0, new ListItem(marca.nombre, modelos.id_marca.ToString()));
                 for (int i = 0; i < concesionarioTabla.Count; i++)
                 {
@@ -67,7 +67,7 @@ namespace CONCESIONARIO_PROYECTO
 
         /*
          * Pre:
-         * Post: Metodo el cual es llamado al clicar en la actualizacion del vehiculo
+         * Post: Metodo el cual es llamado al clicar en la actualizacion del Modelo
          */
         protected void newActualizar_Click(object sender, EventArgs e)
         {
@@ -78,7 +78,7 @@ namespace CONCESIONARIO_PROYECTO
             try
             {
                 result = Int32.Parse(input);
-                idvehic = Int32.Parse(newIdVehiculo.Text);
+                idvehic = Int32.Parse(newIdModelo.Text);
                 Console.WriteLine(result);
             }
             catch (FormatException)
@@ -86,14 +86,14 @@ namespace CONCESIONARIO_PROYECTO
                 Console.WriteLine($"Unable to parse '{input}'");
             }
 
-            String nombreVehiculo = newNombreVehiculo.Text;
-            String tipoVehiculo = newTipoVehiculo.Text;
+            String nombreModelo = newNombreModelo.Text;
+            String motor = newMotor.Text;
             System.Diagnostics.Debug.WriteLine(idvehic);
-            Modelos vehiculo = db.Modelos.FirstOrDefault(x => x.id_modelo == idvehic);    // Buesqueda del vehiculo en memoria
-            vehiculo.id_modelo = idvehic;
-            vehiculo.modelo = nombreVehiculo;
-            vehiculo.motor = tipoVehiculo;
-            vehiculo.id_marca = result;
+            Modelos modelo = db.Modelos.FirstOrDefault(x => x.id_modelo == idvehic);    // Busqueda del modelo en memoria
+            modelo.id_modelo = idvehic;
+            modelo.modelo = nombreModelo;
+            modelo.motor = motor;
+            modelo.id_marca = result;
             try
             {
                 db.SubmitChanges(); // Enviamos datos

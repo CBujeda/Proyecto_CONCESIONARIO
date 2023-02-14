@@ -69,7 +69,7 @@ namespace CONCESIONARIO_PROYECTO
                     id_modelo = result,
                 };
                 db.Vehiculos.InsertOnSubmit(v); // Insercción
-                db.SubmitChanges(); //Actualización de la BBDD
+                db.SubmitChanges();             //Actualización de la BBDD
                 volver();
             }
             else {

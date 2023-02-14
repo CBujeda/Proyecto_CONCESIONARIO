@@ -28,14 +28,14 @@ namespace CONCESIONARIO_PROYECTO
          * Post: Metodo el cual recarga la pagina.
          */
         private void reload()
-        { // Recargamos pagina
+        {
             Response.Redirect(Page.Request.Path, false);
             Context.ApplicationInstance.CompleteRequest();
         }
 
         /*
          * Pre:
-         * Post: MEtodo de redireccion a la edición
+         * Post: Metodo de redireccion a la edición de Marcas
          */
         private void editRedirect(String id)
         {  // redireccion a edit
@@ -48,6 +48,7 @@ namespace CONCESIONARIO_PROYECTO
         /*
          * Pre:
          * Post: Metodo el cual es llamado al ejecutar un RowCommand el cual realiza differentes acciones
+         * ya sea borrar marcas o editar marcas.
          */
         protected void concesionarioTabla_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -56,28 +57,28 @@ namespace CONCESIONARIO_PROYECTO
              * Pre:
              * Post: (deleteMarca) seccion la cual borra una Marca seleccionada
              */
-            if (e.CommandName == "deleteVehiculoMarca")   // si pulsar delete
+            if (e.CommandName == "deleteVehiculoMarca")                     // si pulsar delete
             {
-                int index = Convert.ToInt32(e.CommandArgument); // Obtenemos id del row
-                GridViewRow selectedRow = concesionarioTabla.Rows[index];// Obtenemos row
-                TableCell vehiculoID = selectedRow.Cells[0];     // Obtenemos id de vehiculo 0 = ID
-                string id = vehiculoID.Text;                // Obtenemos string con id
+                int index = Convert.ToInt32(e.CommandArgument);             // Obtenemos id del row
+                GridViewRow selectedRow = concesionarioTabla.Rows[index];   // Obtenemos row
+                TableCell vehiculoID = selectedRow.Cells[0];                // Obtenemos id de vehiculo 0 = ID
+                string id = vehiculoID.Text;                                // Obtenemos string con id
                 int idInt = Convert.ToInt32(id);
-                Marcas vehiculo = dbRep.Marcas.SingleOrDefault(x => x.id_marca == idInt);
-                dbRep.Marcas.DeleteOnSubmit(vehiculo);
+                Marcas marcas = dbRep.Marcas.SingleOrDefault(x => x.id_marca == idInt);
+                dbRep.Marcas.DeleteOnSubmit(marcas);
                 dbRep.SubmitChanges();
                 reload();
             }
             /*
              * Pre:
-             * Post: (editVehiculo) seccion la cual redirige al usuario alformulario de edicion
+             * Post: (editVehiculoMarca) seccion la cual redirige al usuario al formulario de edicion
              */
-            else if (e.CommandName == "editVehiculoMarca") // si pulsar edit
+            else if (e.CommandName == "editVehiculoMarca")                  // si pulsar edit
             {
-                int index = Convert.ToInt32(e.CommandArgument); // Obtenemos id del row
-                GridViewRow selectedRow = concesionarioTabla.Rows[index];// Obtenemos row
-                TableCell vehiculoID = selectedRow.Cells[0];     // Obtenemos id de vehiculo 0 = ID
-                string id = vehiculoID.Text;                // Obtenemos string con id
+                int index = Convert.ToInt32(e.CommandArgument);             // Obtenemos id del row
+                GridViewRow selectedRow = concesionarioTabla.Rows[index];   // Obtenemos row
+                TableCell marcaID = selectedRow.Cells[0];                // Obtenemos id de vehiculo 0 = ID
+                string id = marcaID.Text;                                // Obtenemos string con id
                 editRedirect(id);
             }
         }

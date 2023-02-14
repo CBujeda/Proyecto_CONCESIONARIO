@@ -11,7 +11,7 @@
 </head>
 <body>
     <%-- Navbar --%>
-        <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,10 +34,10 @@
                         <a class="nav-link" href="InsertConcesionario">Insertar vehiculo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InsertConcesionarioMarca">Insertar Marca</a>
+                        <a class="nav-link" href="InsertConcesionarioModelo">Insertar Modelo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InsertConcesionarioModelo">Insertar Modelo</a>
+                        <a class="nav-link" href="InsertConcesionarioMarca">Insertar Marca</a>
                     </li>
                 </ul>
             </div>
@@ -61,17 +61,16 @@
                             <div class="row justify-content-center">
                                 <div class="col-6">
                                     <h1>Editar Modelo</h1>
-                                    <%-- Gardamos la ID del vehiculo --%>
-                                    <asp:TextBox ID="newIdVehiculo" style="display:none" class="form-control" runat="server"></asp:TextBox>
+                                    <%-- Gardamos la ID del Modelo --%>
+                                    <asp:TextBox ID="newIdModelo" Style="display: none" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Nombre Modelo</label>
-                                    <asp:TextBox ID="newNombreVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newNombreModelo" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Motor</label>
-                                    <asp:TextBox ID="newTipoVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newMotor" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Marca</label>
-                                    <%--  <asp:TextBox ID="modelo" class="form-control" runat="server"></asp:TextBox>--%>
                                     <asp:DropDownList ID="newMarca" class="form-select" runat="server"></asp:DropDownList>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Actualizar" OnClick="newActualizar_Click" />
                                 </div>

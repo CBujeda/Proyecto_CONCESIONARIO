@@ -34,10 +34,10 @@
                         <a class="nav-link" href="InsertConcesionario">Insertar vehiculo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InsertConcesionarioMarca">Insertar Marca</a>
+                        <a class="nav-link" href="InsertConcesionarioModelo">Insertar Modelo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InsertConcesionarioModelo">Insertar Modelo</a>
+                        <a class="nav-link" href="InsertConcesionarioMarca">Insertar Marca</a>
                     </li>
                 </ul>
             </div>
@@ -61,10 +61,10 @@
                                 <div class="col-6">
                                     <h1>Añadir Marca</h1>
                                     <label class="form-label">Nombre Marca</label>
-                                    <asp:TextBox ID="nombreVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="nombreMarca" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Pais</label>
-                                    <asp:TextBox ID="tipoVehiculo" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="newPais" class="form-control" runat="server"></asp:TextBox>
 
                                     <label class="form-label">Fecha</label>
                                     <asp:TextBox ID="newMarcaDate" type="date" class="form-control" runat="server"></asp:TextBox>

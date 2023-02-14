@@ -41,21 +41,21 @@ namespace CONCESIONARIO_PROYECTO
         protected void newActualizar_Click(object sender, EventArgs e)
         {
             ConcesionarioRepositoryDataContext db = new ConcesionarioRepositoryDataContext();
-            String nombreSTR = nombreVehiculo.Text;
-            String tipoSTR = tipoVehiculo.Text;
+            String nombreSTR = nombreMarca.Text;
+            String paisSTR = newPais.Text;
             String fecha_str = newMarcaDate.Text;
             
-            if ( nombreSTR.Length >= 3 && tipoSTR.Length >= 3 && fecha_str.Length == 10)    // Verificación de datos
+            if ( nombreSTR.Length >= 3 && paisSTR.Length >= 3 && fecha_str.Length == 10)    // Verificación de datos
             {
                 DateTime dt = DateTime.Parse(fecha_str);
                 Marcas v = new Marcas
                 {
                     nombre = nombreSTR,
-                    pais = tipoSTR,
+                    pais = paisSTR,
                     anno_creacion = dt,
                 };
-                db.Marcas.InsertOnSubmit(v); // Insercción
-                db.SubmitChanges(); //Actualización de la BBDD
+                db.Marcas.InsertOnSubmit(v);    // Insercción
+                db.SubmitChanges();             //Actualización de la BBDD
                 volver();
             }
             else {

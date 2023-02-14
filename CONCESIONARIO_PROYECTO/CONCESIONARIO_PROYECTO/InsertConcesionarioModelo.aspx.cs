@@ -49,9 +49,9 @@ namespace CONCESIONARIO_PROYECTO
             ConcesionarioRepositoryDataContext db = new ConcesionarioRepositoryDataContext();
             int result = 1;
             String input = newMarca.SelectedValue;
-            String nombreSTR = nombreVehiculo.Text;
-            String tipoSTR = tipoVehiculo.Text;
-            if (!input.Equals("-1") && nombreSTR.Length >= 3 && tipoSTR.Length >= 3)    // Verificación de datos
+            String nombreSTR = nombreModelo.Text;
+            String motor = newMotor.Text;
+            if (!input.Equals("-1") && nombreSTR.Length >= 3 && motor.Length >= 3)    // Verificación de datos
             {
                 try
                 {
@@ -65,7 +65,7 @@ namespace CONCESIONARIO_PROYECTO
                 Modelos v = new Modelos
                 {
                     modelo = nombreSTR,
-                    motor = tipoSTR,
+                    motor = motor,
                     id_marca = result,
                 };
                 db.Modelos.InsertOnSubmit(v); // Insercción
