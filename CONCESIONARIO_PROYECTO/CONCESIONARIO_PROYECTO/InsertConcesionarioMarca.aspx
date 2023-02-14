@@ -66,7 +66,7 @@
                                     <label class="form-label">Pais</label>
                                     <asp:TextBox ID="tipoVehiculo" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Marca</label>
+                                    <label class="form-label">Fecha</label>
                                     <asp:TextBox ID="newMarcaDate" type="date" class="form-control" runat="server"></asp:TextBox>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Crear" OnClick="newActualizar_Click" />
                                 </div>

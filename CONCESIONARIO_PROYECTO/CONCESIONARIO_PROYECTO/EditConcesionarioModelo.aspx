@@ -60,7 +60,7 @@
                         <div class="col">
                             <div class="row justify-content-center">
                                 <div class="col-6">
-                                    <h1>Editar Vehiculo</h1>
+                                    <h1>Editar Modelo</h1>
                                     <%-- Gardamos la ID del vehiculo --%>
                                     <asp:TextBox ID="newIdVehiculo" style="display:none" class="form-control" runat="server"></asp:TextBox>
 
