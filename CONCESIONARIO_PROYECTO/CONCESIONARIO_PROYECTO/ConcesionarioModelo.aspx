@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Concesionario.aspx.cs" Inherits="CONCESIONARIO_PROYECTO.Concesionario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConcesionarioModelo.aspx.cs" Inherits="CONCESIONARIO_PROYECTO.ConcesionarioModelo" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="Scripts/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <title>ListadoVehiculos</title>
+    <title>ConcesionariusMaximus</title>
 </head>
 <body>
     <%-- Navbar --%>
@@ -17,7 +17,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img src="Imgs\kitty.png" alt="Logo" width="30" height="24" class="" />
+                <img src="Imgs\Psyduck.png" alt="Logo" width="35" height="30" class="" />
             </a>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -46,23 +46,16 @@
     <form id="form1" runat="server">
         <div class="container-fluid ">
             <p></p>
-
             <%-- Grid view el cual muestra los datos y podemos clicar en edit y delete de forma itrativa --%>
-            <asp:GridView class="table table-dark table-hover table-striped" ID="concesionarioTabla" runat="server" AutoGenerateColumns="False" OnRowCommand="concesionarioTabla_RowCommand">
-
+            <asp:GridView class="table table-dark table-hover table-striped" ID="concesionarioTabla" runat="server" OnRowCommand="concesionarioTabla_RowCommand" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:BoundField DataField="idVehiculo" HeaderText="ID" />
-                    <asp:BoundField DataField="nombreVehiculo" HeaderText="Nombre Vehiculo" />
-                    <asp:BoundField DataField="tipoVehiculo" HeaderText="Tipo de Vehiculo" />
-                    <asp:BoundField DataField="modelo" HeaderText="Modelo" />
+                    <asp:BoundField DataField="id_modelo" HeaderText="ID" />
                     <asp:BoundField DataField="motor" HeaderText="Motor" />
-                    <asp:BoundField DataField="nombreMarca" HeaderText="Marca" />
-                    <asp:BoundField DataField="pais" HeaderText="Pais" />
-                    <asp:BoundField DataField="anno" HeaderText="Año Marca" DataFormatString="{0:dd/MM/yyyy}" />
-                    <asp:ButtonField ButtonType="Button" Text="Edit" CommandName="editVehiculo" HeaderText="">
+                    <asp:BoundField DataField="modelo" HeaderText="Modelo" />
+                    <asp:ButtonField ButtonType="Button" Text="Edit" CommandName="editVehiculoModelo" HeaderText="">
                         <ControlStyle CssClass="btn btn-primary" />
                     </asp:ButtonField>
-                    <asp:ButtonField ButtonType="Button" CommandName="deleteVehiculo" HeaderText="" Text="Delete">
+                    <asp:ButtonField ButtonType="Button" CommandName="deleteVehiculoModelo" HeaderText="" Text="Delete">
                         <ControlStyle CssClass="btn btn-danger" />
                     </asp:ButtonField>
                 </Columns>

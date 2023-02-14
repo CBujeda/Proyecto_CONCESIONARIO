@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditConcesionario.aspx.cs" Inherits="CONCESIONARIO_PROYECTO.EditConcesionario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditConcesionarioModelo.aspx.cs" Inherits="CONCESIONARIO_PROYECTO.EditConcesionarioModelo" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
 </head>
 <body>
     <%-- Navbar --%>
-       <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@
 
                                     <label class="form-label">Modelo</label>
                                     <%--  <asp:TextBox ID="modelo" class="form-control" runat="server"></asp:TextBox>--%>
-                                    <asp:DropDownList ID="newModelo" class="form-select" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="newMarca" class="form-select" runat="server"></asp:DropDownList>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Actualizar" OnClick="newActualizar_Click" />
                                 </div>
                             </div>

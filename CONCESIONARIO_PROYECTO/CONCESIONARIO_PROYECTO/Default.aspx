@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-     <meta http-equiv = "refresh" content = "1; url = /Concesionario.aspx" />
+     <meta http-equiv = "refresh" content = "3; url = /Concesionario.aspx" />
         <h1>
             PROYECTO VEHICULOS
         </h1>

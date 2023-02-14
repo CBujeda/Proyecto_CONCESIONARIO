@@ -304,6 +304,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="ConcesionarioMarca.aspx" />
+    <Content Include="ConcesionarioModelo.aspx" />
     <Content Include="Concesionario.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -324,11 +326,20 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EditConcesionarioMarca.aspx" />
+    <Content Include="EditConcesionarioModelo.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Imgs\Fuecoco.png" />
     <Content Include="Imgs\kitty.png" />
+    <Content Include="Imgs\pikachu.png" />
+    <Content Include="Imgs\Psyduck.png" />
+    <Content Include="Imgs\Quaxly.png" />
+    <Content Include="Imgs\skitty.png" />
     <Content Include="Imgs\vaporeon.png" />
     <Content Include="EditConcesionario.aspx" />
+    <Content Include="InsertConcesionarioMarca.aspx" />
+    <Content Include="InsertConcesionarioModelo.aspx" />
     <Content Include="InsertConcesionario.aspx" />
     <Content Include="LinqToDB.Templates\CopyMe.MySql.tt.txt" />
     <Content Include="LinqToDB.Templates\CopyMe.SqlServer.tt.txt" />
@@ -430,6 +441,20 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ConcesionarioMarca.aspx.cs">
+      <DependentUpon>ConcesionarioMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConcesionarioMarca.aspx.designer.cs">
+      <DependentUpon>ConcesionarioMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConcesionarioModelo.aspx.cs">
+      <DependentUpon>ConcesionarioModelo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConcesionarioModelo.aspx.designer.cs">
+      <DependentUpon>ConcesionarioModelo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Concesionario.aspx.cs">
       <DependentUpon>Concesionario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -456,6 +481,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditConcesionarioMarca.aspx.cs">
+      <DependentUpon>EditConcesionarioMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditConcesionarioMarca.aspx.designer.cs">
+      <DependentUpon>EditConcesionarioMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditConcesionarioModelo.aspx.cs">
+      <DependentUpon>EditConcesionarioModelo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditConcesionarioModelo.aspx.designer.cs">
+      <DependentUpon>EditConcesionarioModelo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -465,6 +504,20 @@
     </Compile>
     <Compile Include="EditConcesionario.aspx.designer.cs">
       <DependentUpon>EditConcesionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertConcesionarioMarca.aspx.cs">
+      <DependentUpon>InsertConcesionarioMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertConcesionarioMarca.aspx.designer.cs">
+      <DependentUpon>InsertConcesionarioMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertConcesionarioModelo.aspx.cs">
+      <DependentUpon>InsertConcesionarioModelo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertConcesionarioModelo.aspx.designer.cs">
+      <DependentUpon>InsertConcesionarioModelo.aspx</DependentUpon>
     </Compile>
     <Compile Include="InsertConcesionario.aspx.cs">
       <DependentUpon>InsertConcesionario.aspx</DependentUpon>

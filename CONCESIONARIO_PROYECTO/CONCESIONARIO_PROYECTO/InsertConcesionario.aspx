@@ -11,21 +11,33 @@
 </head>
 <body>
     <%-- Navbar --%>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img src="Imgs\vaporeon.png" alt="Logo" width="40" height="34" class="" />
+                <img src="Imgs\vaporeon.png" alt="Logo" width="30" height="24" class="" />
             </a>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Concesionario">Home</a>
+                        <a class="nav-link active" aria-current="page" href="Concesionario">Vehiculos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="InsertConcesionario">Insertar</a>
+                        <a class="nav-link active" aria-current="page" href="ConcesionarioModelo">Modelos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="ConcesionarioMarca">Marcas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="InsertConcesionario">Insertar vehiculo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="InsertConcesionarioMarca">Insertar Marca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="InsertConcesionarioModelo">Insertar Modelo</a>
                     </li>
                 </ul>
             </div>
