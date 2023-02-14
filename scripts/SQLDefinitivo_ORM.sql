@@ -38,6 +38,37 @@ go
 Alter Table Vehiculos add Constraint Vehiculos_Modelos_FK
 Foreign Key(id_modelo) references Modelos(id_modelo)
 go
+
+USE [Concesionario]
+GO
+
+ALTER TABLE [dbo].[Vehiculos]  drop CONSTRAINT [Vehiculos_Modelos_FK]
+GO
+ALTER TABLE [dbo].[Vehiculos]  WITH CHECK ADD  CONSTRAINT [Vehiculos_Modelos_FK] FOREIGN KEY([id_modelo])
+REFERENCES [dbo].[Modelos] ([id_modelo])
+ON DELETE CASCADE 
+ON UPDATE CASCADE
+GO
+
+ALTER TABLE [dbo].[Vehiculos] CHECK CONSTRAINT [Vehiculos_Modelos_FK]
+GO
+
+
+USE [Concesionario]
+GO
+
+ALTER TABLE [dbo].[Modelos]  drop CONSTRAINT [Modelos_Maracas_FK]
+go
+ALTER TABLE [dbo].[Modelos]  WITH CHECK ADD  CONSTRAINT [Modelos_Maracas_FK] FOREIGN KEY([id_marca])
+REFERENCES [dbo].[Marcas] ([id_marca])
+ON DELETE CASCADE 
+ON UPDATE CASCADE
+GO
+
+ALTER TABLE [dbo].[Modelos] CHECK CONSTRAINT [Modelos_Maracas_FK]
+GO
+
+
 INSERT INTO Marcas (nombre, pais, anno_creacion)
 VALUES 
   ('SpaceX', 'EEUU', '2012-10-04'),
