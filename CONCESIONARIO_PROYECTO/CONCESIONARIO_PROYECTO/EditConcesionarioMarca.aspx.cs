@@ -40,9 +40,14 @@ namespace CONCESIONARIO_PROYECTO
                 newIdVehiculo.Text = id;
                 ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
                 Marcas modelos = dbRep.Marcas.SingleOrDefault(x => x.id_marca == idInt);
-                newNombreVehiculo.Text = modelos.nombre;
-                newTipoVehiculo.Text = modelos.pais;
-                newMarcaFecha.Text = modelos.anno_creacion.ToString(); /// AERREGLAR
+                if(modelos != null){ 
+                    newNombreVehiculo.Text = modelos.nombre;
+                    newTipoVehiculo.Text = modelos.pais;
+                    DateTime dt = DateTime.Parse(modelos.anno_creacion.ToString());
+                    String datf = dt.ToString("yyyy-MM-dd"); //"2023-02-15 "
+                    System.Diagnostics.Debug.WriteLine(datf);
+                    newMarcaFecha.Text = datf; /// AERREGLAR
+                }
 
             }
         }
@@ -76,22 +81,27 @@ namespace CONCESIONARIO_PROYECTO
 
             String nombreVehiculo = newNombreVehiculo.Text;
             String tipoVehiculo = newTipoVehiculo.Text;
-            DateTime dt = DateTime.Parse(newMarcaFecha.Text);
-            System.Diagnostics.Debug.WriteLine(idvehic);
-            Marcas vehiculo = db.Marcas.FirstOrDefault(x => x.id_marca == idvehic);    // Buesqueda del vehiculo en memoria
-            vehiculo.id_marca = idvehic;
-            vehiculo.nombre = nombreVehiculo;
-            vehiculo.pais = tipoVehiculo;
-            vehiculo.anno_creacion = dt;
-            try
-            {
-                db.SubmitChanges(); // Enviamos datos
+            String fecha_str = newMarcaFecha.Text;
+            if (nombreVehiculo.Length >= 3 && tipoVehiculo.Length >= 3 && fecha_str.Length == 10)   { // Verificación de datos
+                DateTime dt = DateTime.Parse(fecha_str);
+                System.Diagnostics.Debug.WriteLine(idvehic);
+                Marcas vehiculo = db.Marcas.FirstOrDefault(x => x.id_marca == idvehic);    // Buesqueda del vehiculo en memoria
+                vehiculo.id_marca = idvehic;
+                vehiculo.nombre = nombreVehiculo;
+                vehiculo.pais = tipoVehiculo;
+                vehiculo.anno_creacion = dt;
+
+                try
+                {
+                    db.SubmitChanges(); // Enviamos datos
+                }
+                catch (Exception r)
+                {
+                    Console.WriteLine(r);
+                }
+
+                volver();
             }
-            catch (Exception r)
-            {
-                Console.WriteLine(r);
-            }
-            volver();
         }
     }
 }

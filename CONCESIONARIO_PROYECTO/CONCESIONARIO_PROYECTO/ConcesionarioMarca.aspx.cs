@@ -40,7 +40,7 @@ namespace CONCESIONARIO_PROYECTO
         private void editRedirect(String id)
         {  // redireccion a edit
             if(id != null && id != "") { 
-                Response.Redirect("editConcesionarioMarca?id=" + id, false);
+                Response.Redirect("EditConcesionarioMarca?id=" + id, false);
                 Context.ApplicationInstance.CompleteRequest();
             }
         }
@@ -72,7 +72,7 @@ namespace CONCESIONARIO_PROYECTO
              * Pre:
              * Post: (editVehiculo) seccion la cual redirige al usuario alformulario de edicion
              */
-            else if (e.CommandName == "editVehiculoModelo") // si pulsar edit
+            else if (e.CommandName == "editVehiculoMarca") // si pulsar edit
             {
                 int index = Convert.ToInt32(e.CommandArgument); // Obtenemos id del row
                 GridViewRow selectedRow = concesionarioTabla.Rows[index];// Obtenemos row

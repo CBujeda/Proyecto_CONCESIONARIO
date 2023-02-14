@@ -43,10 +43,11 @@ namespace CONCESIONARIO_PROYECTO
             ConcesionarioRepositoryDataContext db = new ConcesionarioRepositoryDataContext();
             String nombreSTR = nombreVehiculo.Text;
             String tipoSTR = tipoVehiculo.Text;
-            DateTime dt = DateTime.Parse(newMarcaDate.Text);
-            if ( nombreSTR.Length >= 3 && tipoSTR.Length >= 3)    // Verificación de datos
+            String fecha_str = newMarcaDate.Text;
+            
+            if ( nombreSTR.Length >= 3 && tipoSTR.Length >= 3 && fecha_str.Length == 10)    // Verificación de datos
             {
-              
+                DateTime dt = DateTime.Parse(fecha_str);
                 Marcas v = new Marcas
                 {
                     nombre = nombreSTR,

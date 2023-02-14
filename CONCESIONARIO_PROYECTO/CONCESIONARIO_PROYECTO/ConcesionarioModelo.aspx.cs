@@ -23,7 +23,15 @@ namespace CONCESIONARIO_PROYECTO
         {
             ConcesionarioRepositoryDataContext dbRep = new ConcesionarioRepositoryDataContext();
             concesionarioTabla.DataSource = from Modelos in dbRep.Modelos
-                                            select Modelos;
+                                            join Marcas in dbRep.Marcas on Modelos.id_marca equals Marcas.id_marca
+                                            select new {
+                                                id_modelo  = Modelos.id_modelo,
+                                                modelo = Modelos.modelo,
+                                                motor = Modelos.motor,
+                                                id_marca = Modelos.id_marca,
+                                                nombre_marca = Marcas.nombre
+                                            
+                                            };
 
                                             
             concesionarioTabla.DataBind();
