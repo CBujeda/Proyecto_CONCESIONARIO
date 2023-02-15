@@ -112,7 +112,7 @@ namespace CONCESIONARIO_PROYECTO
                 volver();
             }
             else {
-                infoLabel.Text = "[INFO] No se insertaron datos debido a que estos no fueron validos \n" +
+                infoLabel.Text = "[INFO] No se insertaron los datos debido a que estos no son validos \n" +
                                  "Nombre Size: " + nombreVehiculo.Length + "\n" +
                                  "Tipo Size: " + tipoVehiculo.Length;
             }

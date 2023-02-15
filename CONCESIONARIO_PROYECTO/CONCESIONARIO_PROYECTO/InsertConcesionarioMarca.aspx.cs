@@ -61,7 +61,7 @@ namespace CONCESIONARIO_PROYECTO
                                  "Nombre Size: " + nombreSTR.Length + "\n" +
                                  "Pais Size: " + paisSTR.Length + "\n" + 
                                  "Date: " + fecha_str;
-                System.Diagnostics.Debug.Write("[INFO] No se insertaron datos debido a que estos no fueron validos" + "\n");
+                System.Diagnostics.Debug.Write("[INFO] No se insertaron los datos debido a que estos no son validos" + "\n");
             }
         }
     }

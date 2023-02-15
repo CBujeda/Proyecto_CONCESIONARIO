@@ -64,17 +64,17 @@
                                     <%-- Gardamos la ID del vehiculo --%>
                                     <asp:TextBox ID="newIdVehiculo" Style="display: none" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Nombre Vehiculo</label>
+                                    <label class="form-label">Nombre Vehiculo*</label>
                                     <asp:TextBox ID="newNombreVehiculo" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Tipo</label>
+                                    <label class="form-label">Tipo*</label>
                                     <asp:TextBox ID="newTipoVehiculo" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Modelo</label>
+                                    <label class="form-label">Modelo*</label>
                                     <asp:DropDownList ID="newModelo" class="form-select" runat="server"></asp:DropDownList>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Actualizar" OnClick="newActualizar_Click" />
-                                    <div class="border border-primary mt-5 p-3">
-                                        <asp:Label ID="infoLabel" runat="server" Text=""></asp:Label>
+                                    <div class="mt-5 p-3">
+                                        <asp:Label  ID="infoLabel" runat="server" Text=""></asp:Label>
                                     </div>
                                 
                                 </div>

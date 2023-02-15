@@ -60,17 +60,17 @@
                             <div class="row justify-content-center">
                                 <div class="col-6">
                                     <h1>Añadir Marca</h1>
-                                    <label class="form-label">Nombre Marca</label>
+                                    <label class="form-label">Nombre Marca*</label>
                                     <asp:TextBox ID="nombreMarca" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Pais</label>
+                                    <label class="form-label">Pais*</label>
                                     <asp:TextBox ID="newPais" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Fecha</label>
+                                    <label class="form-label">Fecha*</label>
                                     <asp:TextBox ID="newMarcaDate" type="date" class="form-control" runat="server"></asp:TextBox>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Crear" OnClick="newActualizar_Click" />
                                 
-                                    <div class="border border-primary mt-5 p-3">
+                                    <div class="mt-5 p-3">
                                         <asp:Label ID="infoLabel" runat="server" Text=""></asp:Label>
                                     </div>
                                 </div>

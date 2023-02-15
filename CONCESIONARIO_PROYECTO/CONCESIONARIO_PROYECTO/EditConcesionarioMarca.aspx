@@ -64,16 +64,16 @@
                                     <%-- Gardamos la ID de la Marca --%>
                                     <asp:TextBox ID="newIdMarca" Style="display: none" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Nombre Marca</label>
+                                    <label class="form-label">Nombre Marca*</label>
                                     <asp:TextBox ID="newNombreMarca" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Pais</label>
+                                    <label class="form-label">Pais*</label>
                                     <asp:TextBox ID="newPais" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Fecha</label>
+                                    <label class="form-label">Fecha*</label>
                                     <asp:TextBox ID="newMarcaFecha" type="date" class="form-control" runat="server"></asp:TextBox>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Actualizar" OnClick="newActualizar_Click" />
-                                    <div class="border border-primary mt-5 p-3">
+                                    <div class="mt-5 p-3">
                                         <asp:Label ID="infoLabel" runat="server" Text=""></asp:Label>
                                     </div>
                                 

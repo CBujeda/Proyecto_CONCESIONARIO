@@ -60,17 +60,17 @@
                             <div class="row justify-content-center">
                                 <div class="col-6">
                                     <h1>Añadir Vehiculo</h1>
-                                    <label class="form-label">Nombre Vehiculo</label>
+                                    <label class="form-label">Nombre Vehiculo*</label>
                                     <asp:TextBox ID="nombreVehiculo" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Tipo</label>
+                                    <label class="form-label">Tipo*</label>
                                     <asp:TextBox ID="tipoVehiculo" class="form-control" runat="server"></asp:TextBox>
 
-                                    <label class="form-label">Modelo</label>
+                                    <label class="form-label">Modelo*</label>
                                     <asp:DropDownList ID="newModelo" class="form-select" runat="server"></asp:DropDownList>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Crear" OnClick="newActualizar_Click" />
                                     
-                                    <div class="border border-primary mt-5 p-3">
+                                    <div class="mt-5 p-3">
                                         <asp:Label ID="infoLabel" runat="server" Text=""></asp:Label>
                                     </div>
                                 
