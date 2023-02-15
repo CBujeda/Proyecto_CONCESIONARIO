@@ -51,7 +51,11 @@ namespace CONCESIONARIO_PROYECTO
             String input = newModelo.SelectedValue;
             String nombreSTR = nombreVehiculo.Text;
             String tipoSTR = tipoVehiculo.Text;
-            if (!input.Equals("-1") && nombreSTR.Length >= 3 && tipoSTR.Length >= 3)    // Verificación de datos
+            if (!input.Equals("-1") && 
+                nombreSTR.Length >= 3 && 
+                tipoSTR.Length >= 3 &&
+                nombreSTR.Length <= 100 &&
+                tipoSTR.Length <= 100)    // Verificación de datos
             {
                 try
                 {
@@ -73,6 +77,9 @@ namespace CONCESIONARIO_PROYECTO
                 volver();
             }
             else {
+                infoLabel.Text = "[INFO] No se insertaron datos debido a que estos no fueron validos \n" +
+                                 "Nombre Size: " + nombreSTR.Length + "\n" +
+                                 "Tipo Size: " + tipoSTR.Length;
                 System.Diagnostics.Debug.Write("[INFO] No se insertaron datos debido a que estos no fueron validos" + "\n");
             }
         }

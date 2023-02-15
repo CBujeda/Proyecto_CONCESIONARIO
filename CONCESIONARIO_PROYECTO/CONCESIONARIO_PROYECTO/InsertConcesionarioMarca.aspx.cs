@@ -13,14 +13,12 @@ namespace CONCESIONARIO_PROYECTO
 
         /*
          * Pre:
-         * Post: Metodo de carga el cual obtendra los datos de los modelos y los desplegara en un DropdownList
+         * Post: Metodo de carga 
          */
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                
-            }
+        
+
         }
 
         /*
@@ -59,6 +57,10 @@ namespace CONCESIONARIO_PROYECTO
                 volver();
             }
             else {
+                infoLabel.Text = "[INFO] No se insertaron datos debido a que estos no fueron validos \n" +
+                                 "Nombre Size: " + nombreSTR.Length + "\n" +
+                                 "Pais Size: " + paisSTR.Length + "\n" + 
+                                 "Date: " + fecha_str;
                 System.Diagnostics.Debug.Write("[INFO] No se insertaron datos debido a que estos no fueron validos" + "\n");
             }
         }

@@ -73,6 +73,10 @@
                                     <label class="form-label">Fecha</label>
                                     <asp:TextBox ID="newMarcaFecha" type="date" class="form-control" runat="server"></asp:TextBox>
                                     <asp:Button ID="newActualizar" class="btn btn-outline-secondary mt-2" runat="server" Text="Actualizar" OnClick="newActualizar_Click" />
+                                    <div class="border border-primary mt-5 p-3">
+                                        <asp:Label ID="infoLabel" runat="server" Text=""></asp:Label>
+                                    </div>
+                                
                                 </div>
                             </div>
                         </div>

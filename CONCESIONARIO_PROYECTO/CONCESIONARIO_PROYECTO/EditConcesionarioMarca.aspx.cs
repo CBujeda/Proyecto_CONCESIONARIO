@@ -82,7 +82,12 @@ namespace CONCESIONARIO_PROYECTO
             String nombreMarca = newNombreMarca.Text;
             String pais = newPais.Text;
             String fecha_str = newMarcaFecha.Text;
-            if (nombreMarca.Length >= 3 && pais.Length >= 3 && fecha_str.Length == 10)   { // Verificación de datos
+            if (nombreMarca.Length >= 3 && 
+                pais.Length >= 3 &&
+                nombreMarca.Length <= 100 &&
+                pais.Length <= 100 &&
+                fecha_str.Length == 10)
+            { // Verificación de datos
                 DateTime dt = DateTime.Parse(fecha_str);
                 System.Diagnostics.Debug.WriteLine(idvehic);
                 Marcas vehiculo = db.Marcas.FirstOrDefault(x => x.id_marca == idvehic);               // Buesqueda de Marca en memoria
@@ -101,6 +106,12 @@ namespace CONCESIONARIO_PROYECTO
                 }
 
                 volver();
+            }
+            else {
+                infoLabel.Text = "[INFO] No se insertaron datos debido a que estos no fueron validos \n" +
+                                "Nombre Size: " + nombreMarca.Length + "\n" +
+                                "Pais Size: " + pais.Length + "\n" +
+                                "Fecha: " + fecha_str;
             }
         }
     }

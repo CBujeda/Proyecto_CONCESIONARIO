@@ -15,10 +15,16 @@ namespace CONCESIONARIO_PROYECTO
          */
         public void CreateDatabase()
         {
-            ConcesionarioRepositoryDataContext db = new ConcesionarioRepositoryDataContext();
-            if (!db.DatabaseExists())
+            try
             {
-                db.CreateDatabase();
+                ConcesionarioRepositoryDataContext db = new ConcesionarioRepositoryDataContext();
+                if (!db.DatabaseExists())
+                {
+                    db.CreateDatabase();
+                }
+            }
+            catch (Exception e){
+                System.Diagnostics.Debug.WriteLine("Error al crear la BBDD" + e.ToString());
             }
         }
 

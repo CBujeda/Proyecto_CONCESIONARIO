@@ -87,20 +87,35 @@ namespace CONCESIONARIO_PROYECTO
 
             String nombreVehiculo = newNombreVehiculo.Text;
             String tipoVehiculo = newTipoVehiculo.Text;
-            Vehiculos vehiculo = db.Vehiculos.FirstOrDefault(x => x.id_vehiculo == idvehic);    // Buesqueda del vehiculo en memoria
-            vehiculo.id_vehiculo = idvehic;
-            vehiculo.nombre = nombreVehiculo;
-            vehiculo.tipo = tipoVehiculo;
-            vehiculo.id_modelo = result;
-            try
+
+            if (nombreVehiculo.Length >= 3 &&
+                tipoVehiculo.Length >= 3 &&
+                nombreVehiculo.Length <= 100 &&
+                tipoVehiculo.Length <= 100
+
+                )    // Verificación de datos
             {
-                db.SubmitChanges();                                                             // Enviamos datos
+
+                Vehiculos vehiculo = db.Vehiculos.FirstOrDefault(x => x.id_vehiculo == idvehic);    // Buesqueda del vehiculo en memoria
+                vehiculo.id_vehiculo = idvehic;
+                vehiculo.nombre = nombreVehiculo;
+                vehiculo.tipo = tipoVehiculo;
+                vehiculo.id_modelo = result;
+                try
+                {
+                    db.SubmitChanges();                                                             // Enviamos datos
+                }
+                catch (Exception r)
+                {
+                    Console.WriteLine(r);
+                }
+                volver();
             }
-            catch (Exception r)
-            {
-                Console.WriteLine(r);
+            else {
+                infoLabel.Text = "[INFO] No se insertaron datos debido a que estos no fueron validos \n" +
+                                 "Nombre Size: " + nombreVehiculo.Length + "\n" +
+                                 "Tipo Size: " + tipoVehiculo.Length;
             }
-            volver();
         }
     }
 }
